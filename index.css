@@ -1,0 +1,28 @@
+form {
+  padding: 20px;
+}
+
+.lable {
+  display: inline-flex;
+  width: 60px;
+}
+
+p {
+  display: inline;
+}
+
+input {
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  margin: 5px;
+  width: 200px;
+}
+
+button {
+  margin-left: 150px;
+  margin-top: 5px;
+}
