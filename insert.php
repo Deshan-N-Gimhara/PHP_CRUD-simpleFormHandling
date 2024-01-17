@@ -2,11 +2,12 @@
 
 
 $name = $_POST['name'];
-$address = $_POST['address'];
-$mobile = $_POST['mobile'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$password=$_POST['password'];
 
-$sql = "insert into student values('','$name', '$address', '$mobile')";
+$sql = "insert into student values('','$name', '$email', '$phone', '$password')";
 
 $con = mysqli_connect("localhost", "root", "deshan@1212","form");
 
-mysqli_query($con, $sql);
+$result = mysqli_query($con, $sql);
