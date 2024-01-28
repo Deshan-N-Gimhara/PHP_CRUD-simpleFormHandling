@@ -71,8 +71,16 @@ if($result){
     <td>'.$email.'</td>
     <td>'.$phone.'</td>
     <td>
-      <button type="button" class="btn btn-danger btn-sm"><a class="text-light" href="delete.php?studentId='.$id.'">Delete</a></button>
-      <button type="button" class="btn btn-outline-secondary btn-sm" ">Update</button>
+      <button type="button" class="btn btn-danger btn-sm">
+        <a class="text-light" href="delete.php?studentId='.$id.'">
+          Delete
+        </a>
+      </button>
+      <button type="button" class="btn btn-secondary btn-sm" ">
+        <a class="text-light" href="update.php?studentId='.$id.'" >
+          Update
+        </a>
+      </button>
     </td>
   </tr>';
   }
