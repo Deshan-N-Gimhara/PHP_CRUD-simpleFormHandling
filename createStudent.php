@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,13 +8,18 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet" />
+    <script>
+      function navigateToForm() {
+        window.location.href = "index.php";
+      }
+    </script>
   </head>
   <body style="background-color: gainsboro">
     <div class="d-flex justify-content-center mt-3">
       <h1>Student Registration Form</h1>
     </div>
     <div class="container my-4" style="width: 450px">
-      <form action="insert.php" method="post">
+      <form  method="post" target="index.html">
         <div class="mb-3">
           <label class="form-label">Name</label>
           <input
@@ -47,9 +53,34 @@
             autocomplete="off" />
         </div>
         <div class="d-flex justify-content-center mt-3">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button
+            name="submit"
+            type="submit"
+            class="btn btn-primary"
+            onclick="navigateToForm()">
+            Submit
+          </button>
         </div>
       </form>
     </div>
   </body>
 </html>
+
+<?php
+
+include 'connect.php';
+
+if(isset($_POST['submit'])){
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $password=$_POST['password'];
+
+  $sql = "INSERT INTO student (name,email,phone,password) VALUES ('$name','$email','$phone','$password')";
+
+  $result = mysqli_query($con, $sql);
+}else{
+  die(mysqli_error($con));
+}
+
+?>
