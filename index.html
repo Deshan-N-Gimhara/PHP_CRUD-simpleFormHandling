@@ -13,7 +13,7 @@
       <h1>Student Registration Form</h1>
     </div>
     <div class="container my-4" style="width: 450px">
-      <form action="insert.php" method="post" target="TableView.html" id="form">
+      <form action="insert.php" method="post">
         <div class="mb-3">
           <label class="form-label">Name</label>
           <input
@@ -51,14 +51,5 @@
         </div>
       </form>
     </div>
-    <script>
-      document
-        .getElementById("form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          window.location.href = "TableView.html";
-        });
-    </script>
   </body>
 </html>
