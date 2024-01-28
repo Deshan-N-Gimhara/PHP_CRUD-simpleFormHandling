@@ -4,15 +4,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Student Registration</title>
+    <title>Create Record</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet" />
-    <script>
-      function navigateToForm() {
-        window.location.href = "index.php";
-      }
-    </script>
+    
   </head>
   <body style="background-color: gainsboro">
     <div class="d-flex justify-content-center mt-3">
@@ -79,8 +75,13 @@ if(isset($_POST['submit'])){
   $sql = "INSERT INTO student (name,email,phone,password) VALUES ('$name','$email','$phone','$password')";
 
   $result = mysqli_query($con, $sql);
-}else{
-  die(mysqli_error($con));
+
+  if($result){
+    header('location: index.php');
+  }else{
+      die(mysqli_error($con));
+  }
 }
+
 
 ?>
